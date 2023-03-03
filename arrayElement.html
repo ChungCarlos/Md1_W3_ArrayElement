@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>arrayElement</title>
+</head>
+<body>
+<h2>Sample Screen:</h2>
+<form>
+    <input type="number" id="number" placeholder="Enter You Number">
+    <button type="button" id="add" value="add" onclick="add_element_Array();">Add</button>
+    <button type="button" id="show" value="show" onclick="show_element();">Display</button>
+    <div id="result"></div>
+</form>
+<script>
+    let x = 0;
+    let array = [];
+
+    // tao ham add_element_Array() de them moi phan tu tu form
+    function add_element_Array() {
+        array[x] = document.getElementById("number").value;
+        alert("Element:" + array[x] + " added at index " + x);
+        x++;
+        document.getElementById("number").value = "";
+    }
+
+    function show_element() {
+        let e = "<hr>";
+        for (let i = 0;i< array.length;i++){
+            e += "Element" + i + " = " +array[i] + "<br>";
+        }
+        document.getElementById("result").innerHTML = e;
+    }
+</script>
+</body>
+</html>
